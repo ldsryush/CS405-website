@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
     
+    // Check if required elements exist
+    if (!contactForm || !formMessage) {
+        console.error('Required form elements not found');
+        return;
+    }
+    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -19,15 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Form submitted with data:', formData);
         
         // Show success message
-        formMessage.className = 'form-message success';
+        formMessage.className = 'form-message success show';
         formMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
         
-        // Reset form
+        // Reset form and validation classes
         contactForm.reset();
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.classList.remove('valid', 'invalid');
+        });
         
         // Hide message after 5 seconds
         setTimeout(function() {
-            formMessage.style.display = 'none';
+            formMessage.classList.remove('show');
         }, 5000);
     });
     
@@ -36,15 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs.forEach(input => {
         input.addEventListener('blur', function() {
             if (this.value.trim() === '') {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '#28a745';
+                this.classList.add('invalid');
+                this.classList.remove('valid');
+            } else if (this.validity && this.validity.valid) {
+                this.classList.add('valid');
+                this.classList.remove('invalid');
             }
         });
         
         input.addEventListener('input', function() {
             if (this.value.trim() !== '') {
-                this.style.borderColor = '#e0e0e0';
+                this.classList.remove('invalid', 'valid');
             }
         });
     });
