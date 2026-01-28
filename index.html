@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVision Solutions - Innovative Software Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Company Name and Logo -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">TV</div>
+                <h1 class="company-name">TechVision Solutions</h1>
+            </div>
+            <p class="tagline">Innovating the Future of Technology</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Product Description Section -->
+            <section class="product-section">
+                <h2>Our Product</h2>
+                <div class="product-description">
+                    <h3>CloudSync Pro</h3>
+                    <p>
+                        CloudSync Pro is a cutting-edge cloud synchronization platform that seamlessly 
+                        integrates your files, applications, and data across all your devices. With 
+                        military-grade encryption and lightning-fast sync speeds, CloudSync Pro ensures 
+                        your information is always secure and accessible wherever you go.
+                    </p>
+                    <div class="features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Real-time synchronization across all devices</li>
+                            <li>256-bit AES encryption for maximum security</li>
+                            <li>Unlimited storage with flexible pricing plans</li>
+                            <li>Collaborative tools for team productivity</li>
+                            <li>24/7 customer support and automatic backups</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Survey Link Section -->
+            <section class="survey-section">
+                <h2>Share Your Feedback</h2>
+                <p>We value your opinion! Help us improve our products and services by taking our quick survey.</p>
+                <a href="https://forms.gle/sample-survey-link" class="survey-link" target="_blank">
+                    Take Our Survey
+                </a>
+                <p class="survey-note">The survey takes only 3-5 minutes to complete</p>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="contact-section">
+                <h2>Get In Touch</h2>
+                <p>Interested in learning more? Fill out the form below and our team will contact you shortly.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Your company name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your interest in our products..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TechVision Solutions. All rights reserved.</p>
+            <p>Contact: info@techvision.com | Phone: (555) 123-4567</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
